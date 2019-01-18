@@ -46,6 +46,12 @@ as projects evolve over time.
 
 List every file in your repository, and briefly summarize each file's purpose in a sentence.
 
+README.md - Contains informtion about the project.
+example-README.md - Contains a template for the readme file.
+LICENSE - license file
+images - a directory that contains an image. (this was here when we joined the github classroom.)
+
+
 ## Summary
 *You'll complete this part at the end of the project.*
 
