@@ -10,6 +10,7 @@
 **Author(s)**: *Gerardo Soto & Aaron Christson*
 
 **Google Document**: *https://docs.google.com/document/d/1OnYtF9OHpxGGOFgn7rhAzPf1oIvjDrZAU22cBT8vuME/edit?usp=sharing*
+**Motion Sensor**: *https://learn.adafruit.com/pir-passive-infrared-proximity-motion-sensor/using-a-pir-w-arduino*
 
 ---
 ## Purpose
