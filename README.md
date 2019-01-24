@@ -21,6 +21,7 @@ The motion sensor will be attached to the base of a door where it will detect wh
 
 ### Colors throughout the day :rainbow:
 Time of day | Hue of color
+------------|-------------
 00:00 - 4:00 | Dark Blue :cyclone: / Violet :purple_heart:
 4:00 - 6:00 | Purple :purple_heart: / Pink :heartbeat:
 6:00 - 8:00 | Pink :heartbeat: / Orange :tangerine:
