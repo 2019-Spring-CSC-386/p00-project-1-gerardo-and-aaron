@@ -19,8 +19,17 @@ Our initial design plan consists of 1 arduino, long enough wiring, 2 rgb lights,
 
 The motion sensor will be attached to the base of a door where it will detect whether or not someone has walked into the room, making the lights turn on. Another sensor will detect movement within the room, resetting the time before the fade back off. The purpose of the lights is to create an ambiance and bring the right feeling to the user during any given time of day. The arduino will be constantly keeping time in the background ensuring that the right light colors are activated when the user enters the room. If it is morning time, for example, the light will emit a pink/orange hue, signifying that it is a new day, and giving the user a sense of life and brightness. Another example can be night when the colors emitted can be a cool shade of purple and cyan, giving the user a light source that is not too blinding. We hope to allow the user an interface to adjust hues and brightness as they wish, as well as more features that we have in mind.
 
-
-## Files  :file_folder:
+### Colors throughout the day :rainbow:
+Time of day | Hue of color
+00:00 - 4:00 | Dark Blue :cyclone: / Violet :purple_heart:
+4:00 - 6:00 | Purple :purple_heart: / Pink :heartbeat:
+6:00 - 8:00 | Pink :heartbeat: / Orange :tangerine:
+8:00 - 12:00 | Orange :tangerine: / Yellow :banana:
+12:00 - 15:00 | Yellow :banana: / White :white_circle: / Cyan :gem:
+15:00 - 18:00 | Cyan :gem: / Blue :atm:
+18:00 - 00:00 | Blue :potable_water: / Dark Blue :cyclone:
+  
+## Files :file_folder:
 
 README.md - Contains informtion about the project.
 
@@ -37,5 +46,6 @@ images - a directory that contains an image. (this was here when we joined the g
 *https://learn.adafruit.com/adafruit-arduino-lesson-3-rgb-leds/parts* - We used this to understand how to connect an rgb led light to an arduino.
 
 *https://www.tweaking4all.com/hardware/pir-sensor/* - Used this to understand how the PIR Sensor works and how to tune it. 
+
 
 
