@@ -13,7 +13,7 @@ In no more than one paragraph, describe the problem your product will solve, and
 The problem we were having was that throughout the day you might be feeling sad because of something that happened or something that is about to happen. In order to regulate this, we will be making a motion "smart" lamp that turns on with motion and adjusts its light depending on the time of day to maximize positive feelings. It will also be able to react to the weather and shine the best possible light for what the weather is like.
 
 
-## Initial Design Plan :crystal_ball: ::
+## Initial Design Plan :crystal_ball: 
 
 Our initial design plan consists of 1 arduino, long enough wiring, 2 rgb lights, 2 motion sensors, and a small power supply to give power to the lights.
 
