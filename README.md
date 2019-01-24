@@ -5,7 +5,6 @@
 ```
 
 # P00: Project 1
-*Give your project a name and replace the above text with that name.*
 
 **Author(s)**: *Gerardo Soto & Aaron Christson*
 
@@ -37,6 +36,11 @@ LICENSE - license file
 images - a directory that contains an image. (this was here when we joined the github classroom.)
 
 ## References
-**Motion Sensor**: *https://learn.adafruit.com/pir-passive-infrared-proximity-motion-sensor/using-a-pir-w-arduino*
+
+*https://learn.adafruit.com/pir-passive-infrared-proximity-motion-sensor/using-a-pir-w-arduino* - We used this to file to understand how to connect a motion sensor to an arduino.
+
+*https://learn.adafruit.com/adafruit-arduino-lesson-3-rgb-leds/parts* - We used this to understand how to connect an rgb led light to an arduino.
+
+*https://www.tweaking4all.com/hardware/pir-sensor/* - Used this to understand how the PIR Sensor works and how to tune it. 
 
 
