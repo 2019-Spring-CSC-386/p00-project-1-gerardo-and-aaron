@@ -29,8 +29,11 @@ The motion sensor will be attached to the base of a door where it will detect wh
 ## Files
 
 README.md - Contains informtion about the project.
+
 example-README.md - Contains a template for the readme file.
+
 LICENSE - license file
+
 images - a directory that contains an image. (this was here when we joined the github classroom.)
 
 ## References
