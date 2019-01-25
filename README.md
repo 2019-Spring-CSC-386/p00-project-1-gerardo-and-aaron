@@ -18,6 +18,7 @@ The problem we were having was that throughout the day you might be feeling sad 
 Our initial design plan consists of 1 arduino, long enough wiring, 2 rgb lights, 2 motion sensors, and a small power supply to give power to the lights.
 
 The motion sensor will be attached to the base of a door where it will detect whether or not someone has walked into the room, making the lights turn on. Another sensor will detect movement within the room, resetting the time before the fade back off. The purpose of the lights is to create an ambiance and bring the right feeling to the user during any given time of day. The arduino will be constantly keeping time in the background ensuring that the right light colors are activated when the user enters the room. If it is morning time, for example, the light will emit a pink/orange hue, signifying that it is a new day, and giving the user a sense of life and brightness. Another example can be night when the colors emitted can be a cool shade of purple and cyan, giving the user a light source that is not too blinding. We hope to allow the user an interface to adjust hues and brightness as they wish, as well as more features that we have in mind.
+![The image of our design](images/design1.png "An image of our design.")
 
 ## Files
 
