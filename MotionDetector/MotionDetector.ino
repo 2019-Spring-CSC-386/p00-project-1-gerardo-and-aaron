@@ -1,14 +1,20 @@
+//the inputs
 const int inputPin = 2;
 const int inputRed = A2;
 const int inputGreen = A1;
 const int inputBlue = A0;
 
-int redState = 0;
-int greenState = 0;
-int blueState = 0;
+
+//start values for the time the colors stay up.
+int redState = 200;
+int greenState = 200;
+int blueState = 200;
 int pirState = LOW;
 int val = 0;
 
+
+
+//sets up which pins we use on the arduino board.
 void setup() {
   // put your setup code here, to run once:
   pinMode(inputPin,INPUT);
@@ -18,49 +24,77 @@ void setup() {
   Serial.begin(9600);
 }
 
+
+// high-tech-AI-recursive-heat-sensing-detection-machine-learning code.
 void loop() {
   // put your main code here, to run repeatedly:
   val = digitalRead(inputPin);
+  int timer = 5000;
   if (val == HIGH){
-    while (pirState == LOW){
-      Serial.println("Motion Detected");
-      for (redState; redState < 255; redState++){
-        analogWrite(inputRed, redState);
-      }
-      redState = 0;
+   
+    Serial.println("Motion Detected");
 
-      for (greenState; greenState < 255; greenState++){
-        analogWrite(inputGreen, greenState);
-      }
-      greenState = 0;
-
-      for (blueState; blueState < 255; blueState++){
-        analogWrite(inputBlue, blueState);
-      }
-      blueState = 0;
-      
-      /*
-      if (redState == LOW){
-        redState = HIGH;
-      }
-      
-      delay(200);
-      
-      if (greenState == LOW){
-        greenState = HIGH;
-      }
+    //turns on red when motion is detected
+    for (redState; redState < 255; redState++){
+      analogWrite(inputRed, redState);
+      //analogWrite(inputBlue, blueState);
+      //Serial.println(redState);
+      delay(100);
+     
+    }
+    pirState = HIGH;
+    Serial.println("Done Red");
+    redState = 125;
+    
+    //pirState = LOW;
+    //turns on green when motion is detected
+    for (greenState; greenState < 255; greenState++){
       analogWrite(inputGreen, greenState);
-      delay(200);
-      */
-      
-      pirState = HIGH;
-    }  
-  } 
+      //Serial.println(greenState);
+      delay(100);
+      //pirState = HIGH;
+    }
+    Serial.println("Done Green");
+    greenState = 125;
+    //pirState = LOW;
+    //turns on blue when motion is detected
+    for (blueState; blueState < 255; blueState++){
+      analogWrite(inputBlue, blueState);
+      //Serial.println(blueState);
+      delay(100);
+      //pirState = HIGH;
+    }
+    Serial.println("Done Blue");
+    blueState = 123;
+    //pirState = LOW;
+    
+    /*
+    if (redState == LOW){
+      redState = HIGH;
+    }
+    
+    delay(200);
+    
+    if (greenState == LOW){
+      greenState = HIGH;
+    }
+    analogWrite(inputGreen, greenState);
+    delay(200);
+    */
+    
+   pirState = HIGH;
+  
+  
+}
+
+//turns off light.
   else {
     if (pirState == HIGH) {
       Serial.println("Motion Ended");
       pirState = LOW;
+      val = LOW;
       
     }
-  }
-}
+    
+  }}
+   
