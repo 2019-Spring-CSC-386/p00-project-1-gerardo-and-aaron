@@ -29,8 +29,33 @@ void setup() {
 void loop() {
   // put your main code here, to run repeatedly:
   val = digitalRead(inputPin);
-  int timer = 5000;
+  Serial.println(val);
+  //int timer = 5000;
   if (val == HIGH){
+    analogWrite(inputRed, 130);
+    //analogWrite(inputGreen, greenState);
+    //analogWrite(inputBlue, 255);
+    delay(1000);
+    analogWrite(inputRed, 0);
+    /*
+    analogWrite(inputRed, 0);
+    //pirState = LOW;
+
+    analogWrite(inputGreen, greenState);
+    delay(1000);
+    //pirState = LOW;
+    */
+    analogWrite(inputBlue, blueState);
+    delay(1000);
+    
+      }
+
+  else if (val == LOW){
+    analogWrite(inputRed,0);
+    analogWrite(inputGreen,0);
+    analogWrite(inputBlue,0);
+  }
+    /*
    
     Serial.println("Motion Detected");
 
@@ -82,19 +107,22 @@ void loop() {
     delay(200);
     */
     
-   pirState = HIGH;
+   //pirState = HIGH;
   
   
-}
-
+//}
+/*
 //turns off light.
   else {
     if (pirState == HIGH) {
       Serial.println("Motion Ended");
       pirState = LOW;
-      val = LOW;
+      //val = LOW;
       
     }
     
-  }}
+  }
+*/
+}
+  
    
