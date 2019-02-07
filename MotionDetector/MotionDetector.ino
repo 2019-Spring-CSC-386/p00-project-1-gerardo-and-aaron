@@ -33,19 +33,19 @@ void setup() {
 
 }
 
-void make_darkblue(){
+void make_Darkblue(){
   analogWrite(inputRed, 0);
   analogWrite(inputGreen, 6);
   analogWrite(inputBlue, 185);
 }
 
-void make_violet(){
+void make_Violet(){
   analogWrite(inputRed, 162);
   analogWrite(inputGreen, 2);
   analogWrite(inputBlue, 151);
 }
 
-void make_pink(){
+void make_Pink(){
   analogWrite(inputRed, 255);
   analogWrite(inputGreen, 71);
   analogWrite(inputBlue, 244);
@@ -111,5 +111,29 @@ void loop() {
     
 
 }
-  
+
+void change_color(){
+  int currenttime = now.time();
+  if (currenttime > 00 && < 4){
+    make_darkblue();
+    }
+  else if (currenttime > 00 && < 4){
+    make_Violet();
+    }
+  else if (currenttime > 4 && < 6){
+    make_Pink();
+    }
+  else if (currenttime > 6 && < 8){
+    make_Orange();
+    }
+  else if (currenttime > 8 && < 12){
+    make_Yellow();
+    }  
+  else if (currenttime > 12 && < 15){
+    make_Cyan();
+  }
+  else (currenttime > 15 && < 18){
+    make_Blue();
+    }  
+    }
    
