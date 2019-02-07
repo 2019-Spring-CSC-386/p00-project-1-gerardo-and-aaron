@@ -1,18 +1,22 @@
+#include <time.h>
+#include <Wire.h>
+#include "RTClib.h"
+#include "DateTime.h"
+
 //the inputs
 const int inputPin = 2;
-const int inputRed = A2;
-const int inputGreen = A1;
-const int inputBlue = A0;
-
+const int inputRed = 5;
+const int inputGreen = 6;
+const int inputBlue = 3;
 
 //start values for the time the colors stay up.
 int redState = 200;
 int greenState = 200;
-int blueState = 200;
+int blueState = 130;
 int pirState = LOW;
 int val = 0;
 
-
+RTC_DS1307 RTC;
 
 //sets up which pins we use on the arduino board.
 void setup() {
@@ -22,107 +26,86 @@ void setup() {
   pinMode(inputGreen,OUTPUT);
   pinMode(inputBlue,OUTPUT);
   Serial.begin(9600);
+  Wire.begin();
+  RTC.begin();
 }
 
+void make_darkblue(){
+  analogWrite(inputRed, 0);
+  analogWrite(inputGreen, 6);
+  analogWrite(inputBlue, 185);
+}
+
+void make_violet(){
+  analogWrite(inputRed, 162);
+  analogWrite(inputGreen, 2);
+  analogWrite(inputBlue, 151);
+}
+
+void make_pink(){
+  analogWrite(inputRed, 255);
+  analogWrite(inputGreen, 71);
+  analogWrite(inputBlue, 244);
+}
+
+void make_Orange(){
+  analogWrite(inputRed, 255);
+  analogWrite(inputGreen, 50);
+  analogWrite(inputBlue, 0);
+}
+
+void make_Yellow(){
+  analogWrite(inputRed, 255);
+  analogWrite(inputGreen, 120);
+  analogWrite(inputBlue, 10);
+}
+
+void make_Cyan(){
+  analogWrite(inputRed, 180);
+  analogWrite(inputGreen, 180);
+  analogWrite(inputBlue, 255);
+}
+
+void make_Blue(){
+  analogWrite(inputRed, 110);
+  analogWrite(inputGreen, 139);
+  analogWrite(inputBlue, 255);  
+}
 
 // high-tech-AI-recursive-heat-sensing-detection-machine-learning code.
 void loop() {
+  DataTime now = RTC.now();
+  Serial.println(now.hour());
+  //Serial.println(hour());
+  /*
+  time_t t = processSyncMessage();
+    if (t != 0) {
+      RTC.set(t);   // set the RTC and the system time to the received value
+      setTime(t);
+ */
   // put your main code here, to run repeatedly:
   val = digitalRead(inputPin);
-  Serial.println(val);
+  //Serial.println(val);
   //int timer = 5000;
   if (val == HIGH){
-    analogWrite(inputRed, 130);
-    //analogWrite(inputGreen, greenState);
-    //analogWrite(inputBlue, 255);
-    delay(1000);
-    analogWrite(inputRed, 0);
-    /*
-    analogWrite(inputRed, 0);
-    //pirState = LOW;
-
-    analogWrite(inputGreen, greenState);
-    delay(1000);
-    //pirState = LOW;
-    */
-    analogWrite(inputBlue, blueState);
-    delay(1000);
+    //make_darkblue();
+    //make_violet();
+    //make_pink();
+    //make_Orange();
+    //make_Yellow();
+    make_Cyan();
+    //make_Blue();
     
       }
 
-  else if (val == LOW){
-    analogWrite(inputRed,0);
-    analogWrite(inputGreen,0);
-    analogWrite(inputBlue,0);
-  }
-    /*
-   
-    Serial.println("Motion Detected");
+//  else if (val == LOW){
+//    analogWrite(inputRed,0);
+//    analogWrite(inputGreen,0);
+//    analogWrite(inputBlue,0);
+    
+//  }
+    
 
-    //turns on red when motion is detected
-    for (redState; redState < 255; redState++){
-      analogWrite(inputRed, redState);
-      //analogWrite(inputBlue, blueState);
-      //Serial.println(redState);
-      delay(100);
-     
-    }
-    pirState = HIGH;
-    Serial.println("Done Red");
-    redState = 125;
-    
-    //pirState = LOW;
-    //turns on green when motion is detected
-    for (greenState; greenState < 255; greenState++){
-      analogWrite(inputGreen, greenState);
-      //Serial.println(greenState);
-      delay(100);
-      //pirState = HIGH;
-    }
-    Serial.println("Done Green");
-    greenState = 125;
-    //pirState = LOW;
-    //turns on blue when motion is detected
-    for (blueState; blueState < 255; blueState++){
-      analogWrite(inputBlue, blueState);
-      //Serial.println(blueState);
-      delay(100);
-      //pirState = HIGH;
-    }
-    Serial.println("Done Blue");
-    blueState = 123;
-    //pirState = LOW;
-    
-    /*
-    if (redState == LOW){
-      redState = HIGH;
-    }
-    
-    delay(200);
-    
-    if (greenState == LOW){
-      greenState = HIGH;
-    }
-    analogWrite(inputGreen, greenState);
-    delay(200);
-    */
-    
-   //pirState = HIGH;
-  
-  
-//}
-/*
-//turns off light.
-  else {
-    if (pirState == HIGH) {
-      Serial.println("Motion Ended");
-      pirState = LOW;
-      //val = LOW;
-      
-    }
-    
-  }
-*/
 }
   
    
