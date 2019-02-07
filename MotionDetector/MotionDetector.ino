@@ -1,7 +1,7 @@
 #include <time.h>
 #include <Wire.h>
 #include "RTClib.h"
-#include "DateTime.h"
+
 
 //the inputs
 const int inputPin = 2;
@@ -25,9 +25,12 @@ void setup() {
   pinMode(inputRed,OUTPUT);
   pinMode(inputGreen,OUTPUT);
   pinMode(inputBlue,OUTPUT);
-  Serial.begin(9600);
   Wire.begin();
   RTC.begin();
+  RTC.adjust(DateTime(2014, 1, 21, 3, 0, 0));
+  Serial.begin(9600);
+
+
 }
 
 void make_darkblue(){
@@ -74,9 +77,10 @@ void make_Blue(){
 
 // high-tech-AI-recursive-heat-sensing-detection-machine-learning code.
 void loop() {
-  DataTime now = RTC.now();
-  Serial.println(now.hour());
-  //Serial.println(hour());
+    DateTime now = RTC.now();
+   
+    Serial.println(now.year());
+    Serial.println();
   /*
   time_t t = processSyncMessage();
     if (t != 0) {
