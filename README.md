@@ -50,5 +50,6 @@ images - a directory that contains an image. (this was here when we joined the g
 
 *https://www.tweaking4all.com/hardware/pir-sensor/* - Used this to understand how the PIR Sensor works and how to tune it. 
 
+*https://learn.adafruit.com/ds1307-real-time-clock-breakout-board-kit/understanding-the-code* - Used some code from this site to dictate time. 
 
 
