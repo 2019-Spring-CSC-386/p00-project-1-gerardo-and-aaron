@@ -16,6 +16,7 @@ int blueState = 130;
 int pirState = LOW;
 int val = 0;
 
+
 RTC_DS1307 RTC;
 
 //sets up which pins we use on the arduino board.
@@ -27,7 +28,8 @@ void setup() {
   pinMode(inputBlue,OUTPUT);
   Wire.begin();
   RTC.begin();
-  RTC.adjust(DateTime(2014, 1, 21, 3, 0, 0));
+  //RTC.adjust(DateTime(2014, 1, 21, 3, 0, 0));
+  //RTC.set(now());
   Serial.begin(9600);
 
 
@@ -78,8 +80,8 @@ void make_Blue(){
 // high-tech-AI-recursive-heat-sensing-detection-machine-learning code.
 void loop() {
     DateTime now = RTC.now();
-   
-    Serial.println(now.year());
+    //setTime(now.unixtime());
+    Serial.println(now.hour());
     Serial.println();
   /*
   time_t t = processSyncMessage();
@@ -97,10 +99,10 @@ void loop() {
     //make_pink();
     //make_Orange();
     //make_Yellow();
-    make_Cyan();
+    //make_Cyan();
     //make_Blue();
-    
-      }
+    change_color();
+   }
 
 //  else if (val == LOW){
 //    analogWrite(inputRed,0);
@@ -113,27 +115,28 @@ void loop() {
 }
 
 void change_color(){
-  int currenttime = now.time();
-  if (currenttime > 00 && < 4){
-    make_darkblue();
+  DateTime now = RTC.now();
+  int currenttime = 5;
+  if (currenttime > 18 && currenttime < 00){
+    make_Darkblue();
     }
-  else if (currenttime > 00 && < 4){
+  else if (currenttime > 00 && currenttime < 4){
     make_Violet();
     }
-  else if (currenttime > 4 && < 6){
+  else if (currenttime > 4 && currenttime < 6){
     make_Pink();
     }
-  else if (currenttime > 6 && < 8){
+  else if (currenttime > 6 && currenttime < 8){
     make_Orange();
     }
-  else if (currenttime > 8 && < 12){
+  else if (currenttime > 8 && currenttime < 12){
     make_Yellow();
     }  
-  else if (currenttime > 12 && < 15){
+  else if (currenttime > 12 && currenttime < 15){
     make_Cyan();
   }
-  else (currenttime > 15 && < 18){
+  else if(currenttime > 15 && currenttime < 18){
     make_Blue();
-    }  
-    }
+  }  
+}
    
