@@ -34,7 +34,7 @@ void setup() {
 
 
 }
-
+//all of the below make that particular color with our LED. 
 void make_Darkblue(){
   analogWrite(inputRed, 0);
   analogWrite(inputGreen, 6);
@@ -77,7 +77,7 @@ void make_Blue(){
   analogWrite(inputBlue, 255);  
 }
 
-// high-tech-AI-recursive-heat-sensing-detection-machine-learning code.
+// high-tech-AI-recursive-heat-sensing-detection-machine-learning code.(its the loop.)
 void loop() {
     DateTime now = RTC.now();
     //setTime(now.unixtime());
@@ -113,7 +113,7 @@ void loop() {
     
 
 }
-
+//AI code.
 void change_color(){
   DateTime now = RTC.now();
   int currenttime = 5;
