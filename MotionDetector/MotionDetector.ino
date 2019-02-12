@@ -16,6 +16,7 @@ int blueState = 130;
 int pirState = LOW;
 int val = 0;
 
+typedef void (*f)(); 
 
 RTC_DS1307 RTC;
 
@@ -77,11 +78,40 @@ void make_Blue(){
   analogWrite(inputBlue, 255);  
 }
 
+void change_color(){
+//  f colors[] = {&make_Darkblue, &make_Violet, &make_Pink, &make_Orange, &make_Yellow, &make_Cyan, &make_Blue};
+//  for (int color=0; color<7; color++){
+//    if (digitalRead(inputPin)==HIGH){
+//      colors[color];
+//    }
+//    else{
+//      analogWrite(inputRed, 0);
+//      analogWrite(inputGreen, 0);
+//      analogWrite(inputBlue, 0); 
+//    }
+//  }
+
+    make_Darkblue();
+    delay(3000);
+    make_Violet();
+    delay(3000);
+    make_Pink();
+    delay(3000);
+    make_Orange();
+    delay(3000);
+    make_Yellow();
+    delay(3000);
+    make_Cyan();
+    delay(3000);
+    make_Blue();
+    delay(3000);
+  }
+
 // high-tech-AI-recursive-heat-sensing-detection-machine-learning code.(its the loop.)
 void loop() {
     DateTime now = RTC.now();
     //setTime(now.unixtime());
-    Serial.println(now.hour());
+    //Serial.println(now.hour());
     Serial.println();
   /*
   time_t t = processSyncMessage();
@@ -91,18 +121,17 @@ void loop() {
  */
   // put your main code here, to run repeatedly:
   val = digitalRead(inputPin);
-  //Serial.println(val);
+  Serial.println(val);
   //int timer = 5000;
   if (val == HIGH){
-    //make_darkblue();
-    //make_violet();
-    //make_pink();
-    //make_Orange();
-    //make_Yellow();
-    //make_Cyan();
-    //make_Blue();
     change_color();
-   }
+    }
+     else{
+        analogWrite(inputRed, 0);
+        analogWrite(inputGreen, 0);
+        analogWrite(inputBlue, 0);    
+     } 
+   
 
 //  else if (val == LOW){
 //    analogWrite(inputRed,0);
@@ -113,30 +142,3 @@ void loop() {
     
 
 }
-//AI code.
-void change_color(){
-  DateTime now = RTC.now();
-  int currenttime = 5;
-  if (currenttime > 18 && currenttime < 00){
-    make_Darkblue();
-    }
-  else if (currenttime > 00 && currenttime < 4){
-    make_Violet();
-    }
-  else if (currenttime > 4 && currenttime < 6){
-    make_Pink();
-    }
-  else if (currenttime > 6 && currenttime < 8){
-    make_Orange();
-    }
-  else if (currenttime > 8 && currenttime < 12){
-    make_Yellow();
-    }  
-  else if (currenttime > 12 && currenttime < 15){
-    make_Cyan();
-  }
-  else if(currenttime > 15 && currenttime < 18){
-    make_Blue();
-  }  
-}
-   
